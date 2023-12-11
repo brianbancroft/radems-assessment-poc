@@ -1,28 +1,46 @@
-import {
-  QuestionMarkCircleIcon,
-  FolderOpenIcon,
-  PlusCircleIcon,
-} from "@heroicons/react/24/outline";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import PageAbout from "./pages/PageAbout";
+import PageAssessmentArchive from "./pages/PageAssessmentArchive";
+import PageHome from "./pages/PageHome";
+import PageNewAssessmentLayout from "./pages/PageNewAssessmentLayout";
+import PageNewAssessmentSelector from "./pages/PageNewAssessmentSelector";
+
+import LayoutHome from "./pages/LayoutHome";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LayoutHome />,
+    children: [
+      {
+        path: "/",
+        element: <PageHome />,
+      },
+      {
+        path: "/archive",
+        element: <PageAssessmentArchive />,
+      },
+      {
+        path: "/about",
+        element: <PageAbout />,
+      },
+      {
+        path: "/assess",
+        element: <PageNewAssessmentLayout />,
+        children: [
+          {
+            path: "/assess",
+            element: <PageNewAssessmentSelector />,
+          },
+        ],
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <div className="grid grid-rows-[1fr_100px] overflow-hidden min-h-screen">
-      <main className="overflow-y-scroll">hello world</main>
-      <footer className="text-red-500 bg-slate-300 flex justify-evenly py-4">
-        <a className="flex flex-col">
-          <FolderOpenIcon />
-          <p>archive</p>
-        </a>
-        <a className="flex flex-col">
-          <PlusCircleIcon />
-          <p>Assess</p>
-        </a>
-        <a className="flex flex-col">
-          <QuestionMarkCircleIcon /> <p>about</p>
-        </a>
-      </footer>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
