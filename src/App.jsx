@@ -1,7 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-
 import {
   QuestionMarkCircleIcon,
   FolderOpenIcon,
@@ -9,8 +5,6 @@ import {
 } from "@heroicons/react/24/outline";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="grid grid-rows-[1fr_100px] overflow-hidden min-h-screen">
       <main className="overflow-y-scroll">hello world</main>
