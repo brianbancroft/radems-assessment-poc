@@ -1,7 +1,6 @@
-import React from "react";
-
+import { Outlet } from "react-router-dom";
 function PageNewAssessmentLayout() {
-  return <div>PageNewAssessmentLayout</div>;
+  return <Outlet />;
 }
 
 export default PageNewAssessmentLayout;
