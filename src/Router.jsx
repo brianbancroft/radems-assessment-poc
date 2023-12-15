@@ -8,6 +8,7 @@ import PageNewAssessmentLayout from "./pages/PageNewAssessmentLayout";
 import PageNewAssessmentSelector from "./pages/PageNewAssessmentSelector";
 import PageNewAssessmentIntro from "./pages/PageNewAssessmentIntro";
 import PageNewAssessmentEnd from "./pages/PageNewAssessmentEnd";
+import PageNewAssessmentPage from "./pages/PageNewAssessmentPage";
 
 import LayoutHome from "./pages/LayoutHome";
 
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
               },
               {
                 path: "/assess/new/:assessmentType/page/:page",
-                element: <PageNewAssessmentIntro />,
+                element: <PageNewAssessmentPage />,
               },
             ],
           },

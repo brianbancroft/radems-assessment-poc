@@ -6,7 +6,7 @@ function PageNewAssessmentSelector() {
       <h1>title</h1>
 
       <section className="grid grid-cols-2 grid-rows-2 gap-2 w-72 h-72 mx-auto my-4">
-        <Link to="/assess/gsar/1" className="border">
+        <Link to="/assess/new/:assessmentType/page/new" className="border">
           Ground Search and Rescue
         </Link>
         <Link
