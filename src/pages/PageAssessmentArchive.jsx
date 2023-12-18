@@ -17,14 +17,14 @@ function PageAssessmentArchive() {
   }, []);
 
   return (
-    <div className="bg-gray-200 ">
+    <div className="bg-gray-200 max-w-prose mx-auto">
       <article className="max-w-prose bg-white min-h-screen mx-auto">
         <h3>Assessments</h3>
         <ul>
           {assessments.map((assessment) => (
             <li
               key={assessment.id}
-              className="p-4 bg-gray-100 mx-2 rounded flex justify-between"
+              className="p-4 bg-gray-100 mx-2 rounded flex justify-between py-8"
             >
               <div>
                 <h4>{assessment.name}</h4>
