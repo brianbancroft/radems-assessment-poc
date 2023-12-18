@@ -11,6 +11,11 @@ import PageNewAssessmentEnd, {
   action as newAssessmentAction,
 } from "./pages/PageNewAssessmentEnd";
 import PageNewAssessmentPage from "./pages/PageNewAssessmentPage";
+import PageArchiveAssessment, {
+  loader as archiveAssessmentLoader,
+} from "./pages/PageArchiveAssessment";
+import PageArchiveLayout from "./pages/PageArchiveLayout";
+
 import { loader as assessmentPageLoader } from "./pages/PageNewAssessmentPageLoader";
 import { AnimatePresence } from "framer-motion";
 
@@ -27,7 +32,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/archive",
-        element: <PageAssessmentArchive />,
+        element: <PageArchiveLayout />,
+        children: [
+          {
+            path: "/archive",
+            element: <PageAssessmentArchive />,
+          },
+          {
+            path: "/archive/:id",
+            element: <PageArchiveAssessment />,
+            loader: archiveAssessmentLoader,
+          },
+        ],
       },
       {
         path: "/about",
