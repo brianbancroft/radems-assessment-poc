@@ -70,7 +70,7 @@ function PageNewAssessmentPage() {
 
   return (
     <AnimatedPage>
-      <article className="">
+      <article className="mx-auto max-w-prose">
         <section id="intro" className="h-24 my-4">
           <h2 className="text-xl mb-3">{title}</h2>
           <p className="my-1">{question}</p>
