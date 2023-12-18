@@ -1,14 +1,17 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
+import AnimatedPage from "../components/AnimatedPage";
 
 function LayoutHome() {
   return (
-    <div className="grid grid-rows-[1fr_100px] overflow-hidden min-h-screen">
-      <main className="overflow-y-scroll px-2 pt-1">
-        <Outlet />
+    <>
+      <main className="mb-[125px] md:px-0 px-4">
+        <AnimatedPage>
+          <Outlet />
+        </AnimatedPage>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 

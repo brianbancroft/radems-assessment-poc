@@ -7,8 +7,12 @@ import PageAssessmentLayout from "./pages/PageAssessmentLayout";
 import PageNewAssessmentLayout from "./pages/PageNewAssessmentLayout";
 import PageNewAssessmentSelector from "./pages/PageNewAssessmentSelector";
 import PageNewAssessmentIntro from "./pages/PageNewAssessmentIntro";
-import PageNewAssessmentEnd from "./pages/PageNewAssessmentEnd";
+import PageNewAssessmentEnd, {
+  action as newAssessmentAction,
+} from "./pages/PageNewAssessmentEnd";
 import PageNewAssessmentPage from "./pages/PageNewAssessmentPage";
+import { loader as assessmentPageLoader } from "./pages/PageNewAssessmentPageLoader";
+import { AnimatePresence } from "framer-motion";
 
 import LayoutHome from "./pages/LayoutHome";
 
@@ -48,10 +52,12 @@ const router = createBrowserRouter([
               {
                 path: "/assess/new/:assessmentType/page/end",
                 element: <PageNewAssessmentEnd />,
+                action: newAssessmentAction,
               },
               {
                 path: "/assess/new/:assessmentType/page/:page",
                 element: <PageNewAssessmentPage />,
+                loader: assessmentPageLoader,
               },
             ],
           },
@@ -62,7 +68,13 @@ const router = createBrowserRouter([
 ]);
 
 function Router() {
-  return <RouterProvider router={router} />;
+  return (
+    <div>
+      <AnimatePresence mode="wait" initial={false}>
+        <RouterProvider router={router} />
+      </AnimatePresence>
+    </div>
+  );
 }
 
 export default Router;
