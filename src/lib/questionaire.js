@@ -194,7 +194,7 @@ export const questionaire = {
       {
         type: "Response capability score",
         title: "Planning",
-        Question: "How much planning has there been?",
+        question: "How much planning has there been?",
         explainers: {
           high: [
             "Plans (and/or pre-plans) are in places, including contingencies, all documented",

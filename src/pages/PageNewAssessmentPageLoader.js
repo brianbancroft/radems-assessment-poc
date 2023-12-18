@@ -15,7 +15,7 @@ export async function loader({ params }) {
     return redirect(`/assess/new/${assessmentType}/page/new`);
   }
 
-  if (Number(page) >= questions.length) {
+  if (Number(page) > questions.length) {
     return redirect(`/assess/new/${assessmentType}/page/end`);
   }
 

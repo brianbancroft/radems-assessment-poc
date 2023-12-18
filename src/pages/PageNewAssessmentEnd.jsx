@@ -14,7 +14,8 @@ export async function action({ request }) {
   const id = uuidv4();
 
   assessments[id] = {
-    ...assessments["current "],
+    type: assessments.current.type,
+    questions: assessments.current.questions,
     id,
     description,
     name,
@@ -25,7 +26,7 @@ export async function action({ request }) {
 
   localStorage.setItem("assessment", JSON.stringify(assessments));
 
-  return redirect(`/archive/${name}?created=true`);
+  return redirect(`/archive/${id}?created=true`);
 }
 
 function PageNewAssessmentEnd() {
