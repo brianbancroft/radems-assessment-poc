@@ -1,6 +1,25 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
+function deleteItem(event) {
+  const formData = new FormData(event.target);
+
+  const id = formData.get("id");
+
+  const assessments = JSON.parse(localStorage.getItem("assessment") ?? "{}");
+
+  if (
+    !window.confirm("Are you sure you want to delete this assessment?") ||
+    !assessments[id]
+  ) {
+    return;
+  }
+
+  delete assessments[id];
+
+  localStorage.setItem("assessment", JSON.stringify(assessments));
+}
+
 function PageAssessmentArchive() {
   const assessments = useMemo(() => {
     const savedAssessments = JSON.parse(
@@ -24,16 +43,28 @@ function PageAssessmentArchive() {
           {assessments.map((assessment) => (
             <li
               key={assessment.id}
-              className="p-4 bg-gray-100 mx-2 rounded flex justify-between py-8"
+              className="p-4 bg-gray-100 mx-2 my-1 rounded-lg flex justify-between py-4"
             >
               <div>
                 <h4>{assessment.name}</h4>
                 <p>{assessment.description}</p>
               </div>
-              <div>
-                <Link to={`/archive/${assessment.id}`} className="bg-white p-4">
+              <div className="flex flex-col justify-evenly h-[7rem]">
+                <Link
+                  to={`/archive/${assessment.id}`}
+                  className="bg-white border-b-4 px-4 py-2"
+                >
                   <button>View</button>
                 </Link>
+                <form onSubmit={deleteItem}>
+                  <button
+                    className="bg-white border-b-4 py-2 px-4"
+                    type="submit"
+                  >
+                    Delete
+                  </button>
+                  <input type="hidden" name="id" value={assessment.id} />
+                </form>
               </div>
             </li>
           ))}
