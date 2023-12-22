@@ -10,25 +10,25 @@ function PageNewAssessmentSelector() {
         <section className="grid grid-cols-2 grid-rows-2 gap-2 w-72 h-72 mx-auto my-4 ">
           <Link
             to="/assess/new/ground/page/new"
-            className="border shadow-xl p-2"
+            className="border-black border-b-4 border-r-4 border-t border-l p-2"
           >
             Ground Search and Rescue
           </Link>
           <Link
             to="#"
-            className="border disabled text-gray-500 cursor-not-allowed border-dashed"
+            className="border-gray-200 p-2 disabled text-gray-500 cursor-not-allowed border-4"
           >
             Rope Rescue
           </Link>
           <Link
             to="#"
-            className="border disabled text-gray-500 cursor-not-allowed border-dashed"
+            className="border-gray-200 p-2 disabled text-gray-500 cursor-not-allowed border-4"
           >
             Swiftwater
           </Link>
           <Link
             to="#"
-            className="border disabled text-gray-500 cursor-not-allowed border-dashed"
+            className="border-gray-200 p-2 disabled text-gray-500 cursor-not-allowed border-4"
           >
             Alpine
           </Link>

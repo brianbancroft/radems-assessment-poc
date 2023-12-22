@@ -40,34 +40,36 @@ function PageAssessmentArchive() {
       <article className="max-w-prose bg-white min-h-screen mx-auto">
         <h3>Assessments</h3>
         <ul>
-          {assessments.map((assessment) => (
-            <li
-              key={assessment.id}
-              className="p-4 bg-gray-100 mx-2 my-1 rounded-lg flex justify-between py-4"
-            >
-              <div>
-                <h4>{assessment.name}</h4>
-                <p>{assessment.description}</p>
-              </div>
-              <div className="flex flex-col justify-evenly h-[7rem]">
-                <Link
-                  to={`/archive/${assessment.id}`}
-                  className="bg-white border-b-4 px-4 py-2"
-                >
-                  <button>View</button>
-                </Link>
-                <form onSubmit={deleteItem}>
-                  <button
-                    className="bg-white border-b-4 py-2 px-4"
-                    type="submit"
+          {assessments
+            .filter((assessment) => assessment.id)
+            .map((assessment) => (
+              <li
+                key={assessment.id}
+                className="p-4 bg-gray-100 mx-2 my-1 rounded-lg flex justify-between py-4"
+              >
+                <div>
+                  <h4>{assessment.name}</h4>
+                  <p>{assessment.description}</p>
+                </div>
+                <div className="flex flex-col justify-evenly h-[7rem]">
+                  <Link
+                    to={`/archive/${assessment.id}`}
+                    className="bg-white border-b-4 px-4 py-2"
                   >
-                    Delete
-                  </button>
-                  <input type="hidden" name="id" value={assessment.id} />
-                </form>
-              </div>
-            </li>
-          ))}
+                    <button>View</button>
+                  </Link>
+                  <form onSubmit={deleteItem}>
+                    <button
+                      className="bg-white border-b-4 py-2 px-4"
+                      type="submit"
+                    >
+                      Delete
+                    </button>
+                    <input type="hidden" name="id" value={assessment.id} />
+                  </form>
+                </div>
+              </li>
+            ))}
         </ul>
       </article>
     </div>
