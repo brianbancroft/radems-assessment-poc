@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import AnimatedPage from "../components/AnimatedPage";
-import { Form, redirect } from "react-router-dom";
+import { Form, redirect, useBlocker } from "react-router-dom";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { v4 as uuidv4 } from "uuid";
 
@@ -30,28 +31,34 @@ export async function action({ request }) {
 }
 
 function PageNewAssessmentEnd() {
+  const blocker = useBlocker((args) => {
+    const { nextLocation } = args;
+
+    return !/\/assess\/new\/.*\/page\/10/.test(nextLocation.pathname);
+  });
+
+  useEffect(() => {
+    if (
+      blocker.state === "blocked" &&
+      confirm("Are you sure you want to leave without saving?")
+    ) {
+      blocker.proceed();
+    }
+  }, [blocker]);
+
   return (
     <AnimatedPage>
-      <article>
+      <article className="mx-auto max-w-prose">
         <section>
-          <h2>It's over</h2>
-          <p>
-            Aliqua laborum deserunt elit culpa consequat. Culpa nostrud elit et
-            in non enim qui consectetur reprehenderit elit aliquip veniam sint
-            proident. Elit ullamco non aliqua pariatur excepteur aliquip aute
-            reprehenderit minim non. Nulla amet tempor duis velit eu do laborum
-            velit cupidatat est do labore incididunt.
-          </p>
-        </section>
-        <section className="my-2">
-          <h2>score</h2>
+          <h2 className="my-2 text-3xl">Assessment Complete</h2>
+
           <div className="grid grid-cols-2 gap-2">
             <div>
-              <h4>Operation Risk Score</h4>
+              <h4 className="font-semibold">Operation Risk Score</h4>
               <p>Your score is 1</p>
             </div>
             <div>
-              <h4>Response Capability Score</h4>
+              <h4 className="font-semibold">Response Capability Score</h4>
               <p>your score is 2</p>
             </div>
           </div>
