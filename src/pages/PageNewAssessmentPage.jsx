@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { Fragment, useEffect } from "react";
+import { useParams, useNavigate, useBlocker } from "react-router-dom";
 
 import { questionaire } from "../lib/questionaire";
 import AnimatedPage from "../components/AnimatedPage";
@@ -8,6 +8,18 @@ function PageNewAssessmentPage() {
   const { assessmentType, page } = useParams();
 
   const navigate = useNavigate();
+  const blocker = useBlocker(({ nextLocation }) => {
+    return !/\/assess\/new\/ground\/page\//.test(nextLocation.pathname);
+  });
+
+  useEffect(() => {
+    if (
+      blocker.state === "blocked" &&
+      confirm("Are you sure you want to cancel this assessment?")
+    ) {
+      blocker.proceed();
+    }
+  }, [blocker.state]);
 
   const { questions } = questionaire[assessmentType];
 
