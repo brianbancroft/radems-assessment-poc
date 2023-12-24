@@ -71,12 +71,12 @@ function PageNewAssessmentPage() {
   return (
     <AnimatedPage>
       <article className="mx-auto max-w-prose">
-        <section id="intro" className="h-24 my-4">
+        <section id="intro" className="mt-4">
           <h2 className="text-xl mb-3">{title}</h2>
           <p className="my-1">{question}</p>
         </section>
-        <section id="selector" className="m5t-4 mb-12">
-          <h3 className="my-2">Select one</h3>
+        <section id="selector" className="mt-2 mb-6">
+          <h3 className="my-2 italic">Select one:</h3>
           <div className="grid grid-cols-3 gap-x-2">
             {scoring.map(({ title, points, color }) => (
               <button
@@ -90,6 +90,7 @@ function PageNewAssessmentPage() {
           </div>
         </section>
         <section id="explainer">
+          <h2 className="text-xl mb-3">Scoring criteria</h2>
           {scoring.map(({ title, color }) => (
             <Fragment key={`explainer-${title}`}>
               <h3

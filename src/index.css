@@ -22,3 +22,13 @@
     font-named-instance: "Italic";
   }
 }
+
+@layer base {
+  .italic {
+    font-style: italic;
+    font-variation-settings: "ital" 1;
+    font-variation-settings: "ital" 1;
+    font-synthesis: none;
+  }
+}
+
