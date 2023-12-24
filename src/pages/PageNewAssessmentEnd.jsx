@@ -64,13 +64,14 @@ function PageNewAssessmentEnd() {
         <section>
           <h2 className="my-2 text-3xl">Assessment Complete</h2>
 
+          <h3 className="my-2 text-2xl">Scores</h3>
           <div className="grid grid-cols-2 gap-2">
             <div>
-              <h4 className="font-semibold">Operation Risk Score</h4>
+              <h4 className="font-semibold">Operation Risk</h4>
               <p>Your score is {operationRiskScore}</p>
             </div>
             <div>
-              <h4 className="font-semibold">Response Capability Score</h4>
+              <h4 className="font-semibold">Response Capability</h4>
               <p>your score is {responseCapabilityScore}</p>
             </div>
           </div>
