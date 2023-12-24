@@ -1,0 +1,142 @@
+:root {
+
+
+    --core-width-unit: calc(var(--core-height-unit) * 5 / 4);
+    --core-height-unit: 10px;
+    --multiple: 20
+  }
+  
+  #assessmentResultCard {
+    border: 2px solid black;
+    font-size: 0.5rem;
+    border-radius: 25px;
+    
+    width: calc(var(--core-width-unit) * 27);
+    height: calc(var(--core-height-unit) * 27);
+    
+    
+    margin: 2.4rem auto;
+  
+  
+    display: grid;
+    grid-template-columns: repeat(6, calc(3 * var(--core-width-unit))  var(--core-width-unit)) calc(3 * var(--core-width-unit));
+    grid-template-rows: repeat(6, calc(3 * var(--core-height-unit))  var(--core-height-unit)) calc(3 * var(--core-height-unit));
+  }
+  
+  .card-title, .card-subtitle {
+    text-transform: uppercase;
+    font-weight: 600;
+    
+  }
+  
+  .card-title {
+    grid-row: 1 / 2;
+    grid-column: span 13;
+    
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 12px
+  }
+  
+  .left {
+    grid-column: 1 / 2;
+    grid-row: span 12;
+  }
+  
+  .left p {
+      transform: rotate(270deg);
+      width: 661px;
+      position: relative;
+      bottom: 150px;
+      right: 300px;
+  }
+  
+  .chart {
+    border: 1px solid black;
+    grid-column: 3 / 13;
+    grid-row: 2 / 12;
+    
+    background: rgb(36,168,44);
+    background: linear-gradient(
+      40deg,
+      rgba(36,168,44,1) 10%,          
+      rgba(236,240,16,1) 38%, 
+      rgba(236,240,16,1) 35%, 
+      rgba(255,0,23,1) 70%
+    );
+    
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+  
+  }
+
+
+  .chart div:nth-of-type(2n):not(:nth-of-type(10n)) {
+    border-right: 2px dashed rgba(50,50,50,0.2);
+  }
+
+  .chart div:nth-child(20n - 9), .chart div:nth-child(20n - 8), .chart div:nth-child(20n - 7), .chart div:nth-child(20n - 6), .chart div:nth-child(20n - 5), .chart div:nth-child(20n - 4), .chart div:nth-child(20n - 3), .chart div:nth-child(20n - 2), .chart div:nth-child(20n - 1), .chart div:nth-child(20n) {
+    border-bottom: 2px dashed rgba(50,50,50,0.2);
+  }
+
+  .chart .bottom-row {
+    border-bottom: none !important;
+  }
+
+
+  
+  .anchor {
+    grid-row: 12/ 13;
+    grid-column: 2 / 3;
+  }
+  
+  
+  .card-subtitle.bottom {
+    grid-column: 5 / 11;
+    grid-row: 13 / 14;
+    padding-top: 0.5rem;
+    text-transform: uppercase;
+  }
+  
+  .lower-grid-scale {
+    grid-row: 12 / 13;
+    grid-column: span 2;
+    padding-left: 0.5625rem;
+    padding-top: 0.2rem;
+  }
+  
+  article .lower-grid-scale.first {
+    grid-column: 2 / span 2;
+  }
+  
+  .left-grid-scale {
+    grid-column: 2 / 3;
+    grid-row: span 2;
+    justify-self: center;
+    position: relative;
+    bottom: 8px;
+  }
+  
+  .left-grid-scale.first {
+    grid-row: 2 / span 2;
+  }
+  
+  .dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: rgb(27, 16, 240);
+    border-radius: 100px;
+    position: relative;
+    top: 0.8rem;
+    right: 0.4rem;
+  }
+
+  .dot.tenth-row {
+    top: -0.4rem;
+  }
+
+  .dot.tenth-column {
+    right: -1.2rem;
+  }

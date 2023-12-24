@@ -3,6 +3,7 @@ import AnimatedPage from "../components/AnimatedPage";
 import { Form, redirect, useBlocker } from "react-router-dom";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { v4 as uuidv4 } from "uuid";
+import CardRademsResults from "../components/CardRademsResults";
 
 export async function action({ request }) {
   let formData = await request.formData();
@@ -73,7 +74,12 @@ function PageNewAssessmentEnd() {
               <p>your score is {responseCapabilityScore}</p>
             </div>
           </div>
+          <CardRademsResults
+            operationRiskScore={operationRiskScore}
+            responseCapabilityScore={responseCapabilityScore}
+          />
         </section>
+
         <section className="my-2">
           <h2 className="my-2 text-2xl">Save this assessment</h2>
           <Form method="POST">
