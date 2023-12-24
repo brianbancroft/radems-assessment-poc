@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import AnimatedPage from "../components/AnimatedPage";
 import { Form, redirect, useBlocker } from "react-router-dom";
 import { CheckIcon } from "@heroicons/react/24/outline";
@@ -46,6 +46,17 @@ function PageNewAssessmentEnd() {
     }
   }, [blocker]);
 
+  const assessment = useMemo(() => {
+    const assessments = JSON.parse(localStorage.getItem("assessment"));
+
+    return assessments["current"];
+  }, []);
+
+  const { questions: q } = assessment;
+
+  const operationRiskScore = q[0] + q[1] + q[2] + q[3] + q[4];
+  const responseCapabilityScore = q[5] + q[6] + q[7] + q[8] + q[9];
+
   return (
     <AnimatedPage>
       <article className="mx-auto max-w-prose">
@@ -55,11 +66,11 @@ function PageNewAssessmentEnd() {
           <div className="grid grid-cols-2 gap-2">
             <div>
               <h4 className="font-semibold">Operation Risk Score</h4>
-              <p>Your score is 1</p>
+              <p>Your score is {operationRiskScore}</p>
             </div>
             <div>
               <h4 className="font-semibold">Response Capability Score</h4>
-              <p>your score is 2</p>
+              <p>your score is {responseCapabilityScore}</p>
             </div>
           </div>
         </section>
