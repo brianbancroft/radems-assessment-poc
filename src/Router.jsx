@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import PageAbout from "./pages/PageAbout";
 import PageAssessmentArchive from "./pages/PageAssessmentArchiveList";
-import PageHome from "./pages/PageHome";
 import PageAssessmentLayout from "./pages/PageAssessmentLayout";
 import PageNewAssessmentLayout from "./pages/PageNewAssessmentLayout";
 import PageNewAssessmentSelector from "./pages/PageNewAssessmentSelector";
@@ -28,7 +27,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <PageHome />,
+        element: <PageAbout />,
       },
       {
         path: "/archive",
