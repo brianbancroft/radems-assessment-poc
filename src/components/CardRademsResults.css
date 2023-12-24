@@ -2,7 +2,7 @@
 
 
     --core-width-unit: calc(var(--core-height-unit) * 5 / 4);
-    --core-height-unit: 10px;
+    --core-height-unit: 1.5vh;
     --multiple: 20
   }
   
