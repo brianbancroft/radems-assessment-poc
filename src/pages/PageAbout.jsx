@@ -23,7 +23,7 @@ function PageAbout() {
           field.
         </p>
 
-        <section className="border-2 border-black rounded my-3 w-full p-4">
+        <section className="border-2 border-black rounded mt-3 mb-6 w-full p-4">
           <h2 className="my-2 text-2xl">New Assessment</h2>
           <Link
             to="/assess"
@@ -32,15 +32,6 @@ function PageAbout() {
             Start
           </Link>
         </section>
-
-        <a
-          className="border-blue-600 border px-4 py-2 rounded-md block text-center"
-          href="#"
-          target="_blank"
-        >
-          <img src={githubIcon} className="w-6 h-6 inline-block mr-2" />
-          Repo
-        </a>
 
         <p className="mt-4 text-gray-700">
           Brian Bancroft 2023-2024. (
@@ -53,6 +44,15 @@ function PageAbout() {
           </a>
           )
         </p>
+
+        <a
+          className="border-gray-600 border px-4 py-2 rounded-md block text-center mt-4"
+          href="#"
+          target="_blank"
+        >
+          <img src={githubIcon} className="w-6 h-6 inline-block mr-2" />
+          Repo
+        </a>
       </div>
     </article>
   );

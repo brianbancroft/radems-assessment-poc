@@ -58,12 +58,26 @@ function PageNewAssessmentEnd() {
   const operationRiskScore = q[0] + q[1] + q[2] + q[3] + q[4];
   const responseCapabilityScore = q[5] + q[6] + q[7] + q[8] + q[9];
 
+  let message = <p></p>;
+  if (operationRiskScore + responseCapabilityScore >= 8) {
+    message = (
+      <p className="text-red-500">
+        Reduce risks and/or improve response capability
+      </p>
+    );
+  } else if (operationRiskScore + responseCapabilityScore >= 6) {
+    message = (
+      <p className="text-yellow-500">Review risks and/or response capability</p>
+    );
+  }
   return (
     <AnimatedPage>
       <article className="mx-auto max-w-prose">
         <section>
           <h2 className="my-2 text-3xl">Assessment Complete</h2>
-
+          <div className="mb-4">{message}</div>
+        </section>
+        <section>
           <h3 className="my-2 text-2xl">Scores</h3>
           <div className="grid grid-cols-2 gap-2">
             <div>
