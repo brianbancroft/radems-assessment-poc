@@ -1,4 +1,4 @@
-import { json, redirect, useLoaderData } from "react-router-dom";
+import { json, redirect, useLoaderData, useNavigate } from "react-router-dom";
 
 import { questionaire } from "../lib/questionaire";
 
@@ -18,6 +18,7 @@ export function loader({ params }) {
 
 function PageArchiveAssessment() {
   const assessment = useLoaderData();
+  const navigate = useNavigate();
 
   const formattedDate = new Intl.DateTimeFormat("en-US", {
     dateStyle: "full",
@@ -25,6 +26,20 @@ function PageArchiveAssessment() {
   }).format(new Date(assessment.createdAt));
 
   const { questions: q } = assessment;
+
+  function handleClick() {
+    if (!confirm("Are you sure you want to delete this assessment?")) {
+      return;
+    }
+
+    const assessments = JSON.parse(localStorage.getItem("assessment") ?? "{}");
+
+    delete assessments[assessment.id];
+
+    localStorage.setItem("assessment", JSON.stringify(assessments));
+
+    navigate("/archive");
+  }
 
   const questionaireQuestions = questionaire[assessment.type].questions;
 
@@ -60,7 +75,12 @@ function PageArchiveAssessment() {
     <>
       <article className="mx-auto max-w-prose">
         <section className="my-4">
-          <h2 className="text-2xl font-bold mb-2">{assessment.name}</h2>
+          <div className="flex justify-between">
+            <h2 className="text-2xl font-bold mb-2">{assessment.name}</h2>
+            <button className="text-red-500" onClick={handleClick}>
+              Delete
+            </button>
+          </div>
           <p className="text-gray-500 text-sm">
             {questionaire[assessment.type].title} assessment
           </p>
