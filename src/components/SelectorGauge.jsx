@@ -1,25 +1,48 @@
 import classes from "./SelectorGauge.module.css";
 
-console.log("classes", classes);
-
 function SelectorGauge(props) {
-  const { selectedOption, reversed } = props;
+  const { selectedOption, reversed, handleSelect } = props;
 
-  //   if ([0, 1, 2].indexOf(selectedOption) === -1) {
-  //     throw new Error("Invalid selectedOption");
-  //   }
+  function SelectionButton({ handleSelect, selected }) {
+    return (
+      <div className={classes["button-container"]}>
+        <button
+          onClick={handleSelect}
+          className={
+            selected
+              ? classes["button-selected"]
+              : classes["button-not-selected"]
+          }
+        ></button>
+      </div>
+    );
+  }
+
+  let elements = ["low", "moderate", "high"];
+  if (reversed) elements = elements.reverse();
 
   return (
     <div className={classes["gauge-container"]}>
       <div className={classes["gauge-scale"]}>
-        <div className="uppercase">low</div>
-        <div className="uppercase">moderate</div>
-        <div className="uppercase">high</div>
+        {elements.map((element) => (
+          <div className="uppercase" key={element}>
+            {element}
+          </div>
+        ))}
       </div>
       <div className={classes["gauge"]}>
-        <div>0</div>
-        <div>1</div>
-        <div>2</div>
+        <div>
+          <SelectionButton selected={selectedOption === 0} />
+          <span>0</span>
+        </div>
+        <div>
+          <SelectionButton selected={selectedOption === 1} />
+          <span>1</span>
+        </div>
+        <div>
+          <SelectionButton selected={selectedOption === 2} />
+          <span>2</span>
+        </div>
       </div>
     </div>
   );

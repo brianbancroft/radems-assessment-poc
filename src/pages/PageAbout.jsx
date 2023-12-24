@@ -5,8 +5,8 @@ function PageAbout() {
     <article className=" mx-auto px-4 py-8 max-w-prose">
       <div className="flex flex-col items-center">
         <p className="mb-4 text-gray-700">
-          This is a better attempt at an easier-to-use version of the online
-          RADeMS assessment tool{" "}
+          This is a concept of an easier-to-use version of the online RADeMS
+          assessment tool{" "}
           <a
             href="https://bcsara.com/RADeMS/"
             target="_blank"
@@ -17,10 +17,9 @@ function PageAbout() {
           .
         </p>
         <p className="mb-4 text-gray-700">
-          This is a visual refactor of the tool. It removes the pages of text
-          and context and strips it down to something which follows the workflow
-          of a real-life assessment so that the question can be asked and
-          answered without distraction.
+          This tool seeks to take all the main elements of the existing RADeMS
+          PWA and distill it down to something that is easier to use in the
+          field.
         </p>
 
         <a
@@ -31,6 +30,18 @@ function PageAbout() {
           <img src={githubIcon} className="w-6 h-6 inline-block mr-2" />
           Repo
         </a>
+
+        <p className="mt-4 text-gray-700">
+          Brian Bancroft 2023-2024. (
+          <a
+            href="https://bancroft.io"
+            target="_blank"
+            className="underline text-blue-500"
+          >
+            site
+          </a>
+          )
+        </p>
       </div>
     </article>
   );

@@ -13,27 +13,22 @@ function PageNewAssessmentIntro() {
     <AnimatedPage>
       <article className="mx-auto max-w-prose">
         <h1 className="my-2 text-3xl">Getting Started</h1>
-        <p className="my-1">
+        <p className="my-2">
           This is the introduction on how to use this tool to determine risk
           score for a SAR tasking
         </p>
-        <p className="my-1">
-          Eiusmod quis nostrud enim dolore elit est sunt ad labore. Id commodo
-          et fugiat consequat. Voluptate nisi esse nisi deserunt veniam ipsum
-          anim aute commodo aliquip dolore laboris. Cillum sint et est
-          adipisicing. Est dolor elit culpa esse elit aute aute cupidatat aute
-          velit et non officia veniam. Amet elit pariatur do velit quis minim
-          mollit.
+        <p className="my-2">
+          This is a individually-created supplement to the RADeMS Ground and
+          Inland Water Search and Rescue Assessment and Decision Making Support
+          Reference Guide published in 2014 (rev 2014-08-29)
         </p>
-        <p className="my-1">
-          Fugiat aute voluptate consectetur velit nulla consequat est eiusmod
-          exercitation velit laborum esse. Est aliquip ut ex amet cupidatat
-          cillum. Ea et id tempor aliqua sint nostrud. Ad fugiat minim nisi
-          cillum fugiat deserunt excepteur labore labore do. Nisi eu eu velit
-          enim cillum proident.
+        <p className="my-2 font-semibold">
+          This assessment tool should not be used in real taskings. If there is
+          any conflict between this tool and the RADeMS guide, the RADeMS guide
+          is the source of truth.
         </p>
 
-        <section className="flex justify-end w-full mt-4">
+        <section className="flex justify-center w-full mt-4">
           <Link
             to={`/assess/new/${assessmentType}/page/1`}
             className="underline text-blue-500 flex flex-row justify-evenly items-center"

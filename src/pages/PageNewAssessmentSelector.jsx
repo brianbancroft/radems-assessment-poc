@@ -5,7 +5,7 @@ function PageNewAssessmentSelector() {
   return (
     <AnimatedPage>
       <article className="mx-auto max-w-prose py-12">
-        <h1>title</h1>
+        <h1 className="text-2xl">New Assessment</h1>
 
         <section className="grid grid-cols-2 grid-rows-2 gap-2 w-72 h-72 mx-auto my-4 ">
           <Link
@@ -34,13 +34,8 @@ function PageNewAssessmentSelector() {
           </Link>
         </section>
         <p>
-          Aute aliqua Lorem sunt cupidatat officia ullamco reprehenderit nisi
-          officia aute nulla. Mollit ut proident velit dolor amet ex.
-          Reprehenderit exercitation laboris minim nulla magna dolor irure
-          pariatur ipsum officia. Minim qui sunt adipisicing sit. Duis eiusmod
-          laborum cupidatat officia commodo labore sint veniam nisi velit
-          laboris do. Ea laborum nulla reprehenderit esse consequat excepteur
-          sunt magna eu reprehenderit.
+          Select the type of assessment you would like to create. This is a
+          proof-of-concept, and only Ground Search is available.
         </p>
       </article>
     </AnimatedPage>

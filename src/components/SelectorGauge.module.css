@@ -1,39 +1,58 @@
-body {
-    font-family: Arial, sans-serif;
-  }
-  
-  .gauge-container {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .gauge, .gauge-scale {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-  }
-  
-  .gauge {
-    width: 100%; /* Full width */
-    max-width: 500px;
-    height: 30px; /* Gauge height */
-    background: linear-gradient(to right, #4caf50 0%, #ffeb3b 50%, #f44336 100%);
-    
-    display: flex;
-    align-items: center;
-  }
-  
-  .gauge div {
-    padding: 0 45px;
-    font-weight: 600;
-  }
-  
-  .gauge-scale {
-    display: flex;
-  }
-  
-  
-  
-  
-  
+.gauge-container {
+width: 100%;
+max-width: 500px;
+margin: 0 auto;
+}
+
+.gauge, .gauge-scale {
+display: flex;
+justify-content: space-evenly;
+width: 100%;
+}
+
+.gauge {
+width: 100%; /* Full width */
+max-width: 500px;
+height: 30px; /* Gauge height */
+background: linear-gradient(to right, #4caf50 0%, #ffeb3b 50%, #f44336 100%);
+
+display: flex;
+align-items: center;
+}
+
+.gauge div {
+padding: 0 45px;
+font-weight: 600;
+}
+
+.gauge-scale {
+display: flex;
+}
+
+
+.button-container {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.button-selected, .button-not-selected {
+    position: relative;
+    height: 35px;
+    width: 35px;
+    right: 58px;
+    bottom: 5px;
+}
+
+.button-not-selected {
+
+}
+
+.button-selected {
+border: 1px solid red;
+border-radius: 200px;
+}
+
+
+
+

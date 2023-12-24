@@ -32,11 +32,26 @@ function PageArchiveAssessment() {
   const responseCapabilityScore = q[5] + q[6] + q[7] + q[8] + q[9];
 
   let responseElements = [];
+
   for (let i = 0; i < questionaireQuestions.length; i++) {
+    if (i === 0) {
+      responseElements.push(
+        <h3 className="text-xl my-1 font-light">SAR Operation Risk Score</h3>
+      );
+    }
+
+    if (i === 5) {
+      responseElements.push(
+        <h3 className="text-xl my-1 font-light">Response Capability Score</h3>
+      );
+    }
+
     responseElements.push(
-      <div>
-        <h4>{questionaireQuestions[i].question}</h4>
-        <p>{q[i]}</p>
+      <div className="my-5">
+        <h4 className="font-light text-sm italic">
+          {questionaireQuestions[i].question}
+        </h4>
+        <SelectorGauge selectedOption={q[i]} />
       </div>
     );
   }
@@ -71,7 +86,6 @@ function PageArchiveAssessment() {
         </section>
         <section>{/* TODO: Create delete action */}</section>
       </article>
-      <SelectorGauge />
     </>
   );
 }
