@@ -38,7 +38,7 @@ function PageAssessmentArchive() {
   return (
     <div className="bg-gray-200 max-w-prose mx-auto">
       <article className="max-w-prose bg-white min-h-screen mx-auto">
-        <h3>Assessments</h3>
+        <h3 className="text-2xl my-2">Assessment Archive</h3>
         <ul>
           {assessments
             .filter((assessment) => assessment.id)
@@ -54,13 +54,13 @@ function PageAssessmentArchive() {
                 <div className="flex flex-col justify-evenly h-[7rem]">
                   <Link
                     to={`/archive/${assessment.id}`}
-                    className="bg-white border-b-4 px-4 py-2"
+                    className="bg-white border-b-4 border-r-4 px-4 py-2"
                   >
                     <button>View</button>
                   </Link>
                   <form onSubmit={deleteItem}>
                     <button
-                      className="bg-white border-b-4 py-2 px-4"
+                      className="bg-white border-b-4 border-r-4 py-2 px-4"
                       type="submit"
                     >
                       Delete

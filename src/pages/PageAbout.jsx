@@ -6,12 +6,21 @@ function PageAbout() {
       <div className="flex flex-col items-center">
         <p className="mb-4 text-gray-700">
           This is a better attempt at an easier-to-use version of the online
-          RADeMS assessment tool.
+          RADeMS assessment tool{" "}
+          <a
+            href="https://bcsara.com/RADeMS/"
+            target="_blank"
+            className="underline text-blue-500"
+          >
+            (BCSARA)
+          </a>
+          .
         </p>
         <p className="mb-4 text-gray-700">
-          This tool was created as a tribute to the hard work of the volunteers
-          who have put hours of hard work into the original assessment tool, and
-          isn't intended as a full standalone replacement
+          This is a visual refactor of the tool. It removes the pages of text
+          and context and strips it down to something which follows the workflow
+          of a real-life assessment so that the question can be asked and
+          answered without distraction.
         </p>
 
         <a

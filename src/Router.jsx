@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import PageAbout from "./pages/PageAbout";
-import PageAssessmentArchive from "./pages/PageAssessmentArchive";
+import PageAssessmentArchive from "./pages/PageAssessmentArchiveList";
 import PageHome from "./pages/PageHome";
 import PageAssessmentLayout from "./pages/PageAssessmentLayout";
 import PageNewAssessmentLayout from "./pages/PageNewAssessmentLayout";
